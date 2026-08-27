@@ -13,6 +13,10 @@ export const loginSubmit = element({
   name: "Login submit",
   locator: { csspath: "[data-testid='login-submit']" },
 });
+export const loginError = element({
+  name: "Login error message",
+  locator: { csspath: "[data-testid='error-message']" },
+});
 
 // Search results (app/hotels/search/page.tsx)
 export const hotelCard = element({
@@ -60,6 +64,14 @@ export const continueToPayment = element({
 export const testCardSuccess = element({
   name: "Fill test card (Success)",
   locator: { csspath: "[data-testid='test-card-success']" },
+});
+export const testCardDeclined = element({
+  name: "Fill test card (Declined)",
+  locator: { csspath: "[data-testid='test-card-declined']" },
+});
+export const paymentError = element({
+  name: "Payment error message",
+  locator: { csspath: "[data-testid='payment-error']" },
 });
 export const billingStreet = element({
   name: "Billing street",
