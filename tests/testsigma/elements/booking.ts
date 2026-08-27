@@ -111,3 +111,37 @@ export const confirmationCheckOut = element({
   name: "Confirmation check-out date",
   locator: { csspath: "[data-testid='confirmation-checkout']" },
 });
+
+// My Bookings (app/dashboard/bookings/page.tsx)
+// The seed data (mocks/handlers/hotels.ts) ships 2 fixed bookings for this
+// user ahead of anything created in a test run, and new bookings are always
+// appended after them -- so the *last* matching row is always the most
+// recently created booking, i.e. the one this spec just booked.
+export const bookingRef = element({
+  name: "My Bookings — most recent booking reference",
+  locator: { xpath: "(//*[starts-with(@data-testid,'booking-ref-')])[last()]" },
+});
+export const bookingStatus = element({
+  name: "My Bookings — most recent booking status badge",
+  locator: { xpath: "(//*[starts-with(@data-testid,'booking-status-')])[last()]" },
+});
+export const cancelBookingButton = element({
+  name: "My Bookings — Cancel button on the most recent booking",
+  locator: { xpath: "(//*[starts-with(@data-testid,'cancel-booking-')])[last()]" },
+});
+export const myBookingsNavLink = element({
+  name: "Navbar — My Bookings link",
+  locator: { csspath: "[data-testid='nav-my-bookings']" },
+});
+export const cancelModal = element({
+  name: "Cancel booking modal",
+  locator: { csspath: "[data-testid='cancel-modal']" },
+});
+export const cancelModalKeep = element({
+  name: "Cancel modal — Keep Booking",
+  locator: { csspath: "[data-testid='cancel-modal-no']" },
+});
+export const cancelModalConfirm = element({
+  name: "Cancel modal — Yes, Cancel",
+  locator: { csspath: "[data-testid='cancel-modal-yes']" },
+});
